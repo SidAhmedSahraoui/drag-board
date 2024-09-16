@@ -1,13 +1,13 @@
-## DragTrack - A Kanban Board for Drag and Drop
+## DragBoard - A Kanban Board for Drag and Drop
 
-DragTrack is a simple Kanban board that allows you to drag and drop tasks between columns. It is built using:
+DragBoardis a simple Kanban board that allows you to drag and drop tasks between columns. It is built using:
 
 - React
 - DnD-Kit
 - TypeScript
 - Tailwind CSS
 - Framer-Motion
-- Lucide Icons (for the icons)
+- Hero Icons (for the icons)
 
 ## 👾 Features
 
@@ -20,11 +20,11 @@ DragTrack is a simple Kanban board that allows you to drag and drop tasks betwee
 
 ## 📒 Process
 
-I started by implementing the functionality for creating containers. Next, I added the ability to drag and drop containers. Afterwards, I focused on the capability to create items inside containers and further, to drag and drop them. 
+I started by implementing the functionality for creating containers. Next, I added the ability to drag and drop containers. Afterwards, I focused on the capability to create items inside containers and further, to drag and drop them.
 
-Then I styled the board, drawing inspiration from modern Kanban boards like Jira, Trello, and Notion based on my experience. 
+Then I styled the board, drawing inspiration from modern Kanban boards like Jira, Trello, and Notion based on my experience.
 
-Subsequently, I added functionalities for deleting items and containers. I then implemented the ability to edit the names of containers and items. Lastly, I added an indication of which container you are editing items in. Afterward, I performed some small refactoring and styling touch-ups. 
+Subsequently, I added functionalities for deleting items and containers. I then implemented the ability to edit the names of containers and items. Lastly, I added an indication of which container you are editing items in. Afterward, I performed some small refactoring and styling touch-ups.
 
 Some features were added in between the main features development. Everything is saved in local storage. The user can come back, and everything will still be there.
 
@@ -41,6 +41,4 @@ To run the project in your local environment, follow these steps:
 
 ## 📹 Video
 
-https://github.com/mirayatech/drag-track/assets/71933266/bee55318-f365-4028-9003-c06db8567a53
-
-
+https://github.com/SidAhmedSahraoui/drag-board/assets

@@ -249,7 +249,7 @@ export default function App() {
       </Modal>
       <div className="flex items-center justify-between gap-y-2">
         <h1 className="text-gray-800 text-xl md:text-3xl font-bold">
-          DragTrack
+          DragBoard
         </h1>
         <Button
           onClick={() => setShowAddContainerModal(true)}
