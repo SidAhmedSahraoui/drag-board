@@ -39,7 +39,7 @@ import {
   SortableContext,
   sortableKeyboardCoordinates,
 } from "@dnd-kit/sortable";
-import { Squares2X2Icon, TrashIcon, DocumentTextIcon } from "@heroicons/react/20/solid";
+import { Squares2X2Icon, TrashIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
 
 export default function App() {
   const [containerName, setContainerName] = useState("");
@@ -172,8 +172,8 @@ export default function App() {
         </div>
       </Modal>
       <Modal showModal={showEditItemModal} setShowModal={setShowEditItemModal}>
-        <div className="flex justify-between">
-          <div className="flex items-start gap-3">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-3">
             <Squares2X2Icon className="h-6 w-6 text-gray-500" />
             <h1 className="leading-[1]">
               <span className="text-base font-semibold md:font-medium">
@@ -202,7 +202,7 @@ export default function App() {
         </div>
 
         <div className="mt-8">
-          <div className="flex gap-3 mb-3">
+          <div className="flex items-center gap-3 mb-3">
             <DocumentTextIcon className="h-6 w-6 text-gray-500" />
             <span className="text-base font-semibold md:font-medium">
               Card Title

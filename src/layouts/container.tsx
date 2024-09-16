@@ -66,7 +66,7 @@ export function Container({
             className="text-slate-500 hover:text-gray-900 transition-colors pr-2 "
             onClick={() => setMenuOpen(!isMenuOpen)}
           >
-            <EllipsisVerticalIcon />
+            <EllipsisVerticalIcon className="h-6 w-6 text-gray-500" />
           </button>
           <AnimatePresence>
             {isMenuOpen && (
