@@ -43,7 +43,7 @@ import { Squares2X2Icon, TrashIcon, DocumentTextIcon } from "@heroicons/react/24
 
 export default function App() {
   const [containerName, setContainerName] = useState("");
-  const { containers, setContainers, addContainer } = useStore();
+  const { containers, setContainers, addContainer, deleteContainer, editContainer, addItem, deleteItem, editItem } = useStore();
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null);
   const [showAddContainerModal, setShowAddContainerModal] = useState(false);
   const [showAddItemModal, setShowAddItemModal] = useState(false);
@@ -121,11 +121,11 @@ export default function App() {
             onClick={() =>
               onAddItem(
                 itemName,
+                currentContainerId,
+                addItem,
                 setItemName,
                 setShowAddItemModal,
-                containers,
-                setContainers,
-                currentContainerId
+                
               )
             }
             disabled={isItemNameEmpty(itemName)}
@@ -154,8 +154,7 @@ export default function App() {
               onEditContainer(
                 editingContainerName,
                 editingContainer,
-                containers,
-                setContainers,
+                editContainer,
                 setEditingContainer,
                 setEditingContainerName,
                 setShowEditContainerModal
@@ -177,7 +176,7 @@ export default function App() {
             <Squares2X2Icon className="h-6 w-6 text-gray-500" />
             <h1 className="leading-[1]">
               <span className="text-base font-semibold md:font-medium">
-                Optimization
+                {editingItemName}
               </span>{" "}
               <br />
               <span className="text-sm text-gray-500">
@@ -192,8 +191,8 @@ export default function App() {
             onClick={() =>
               onDeleteItem(
                 editingItem,
-                containers,
-                setContainers,
+                currentContainerId,
+                deleteItem,
                 setEditingItem,
                 setShowEditItemModal
               )
@@ -230,8 +229,8 @@ export default function App() {
                 onEditItem(
                   editingItemName,
                   editingItem,
-                  containers,
-                  setContainers,
+                  currentContainerId,
+                  editItem,
                   setEditingItem,
                   setShowEditItemModal
                 )
@@ -289,7 +288,7 @@ export default function App() {
                     )
                   }
                   onDelete={() =>
-                    onDeleteContainer(container.id, containers, setContainers)
+                    onDeleteContainer(container.id, deleteContainer)
                   }
                 >
                   <SortableContext

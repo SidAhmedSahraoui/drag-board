@@ -13,41 +13,28 @@ export function findItemTitle(
   return item.title;
 }
 
+
 export function onAddItem(
     itemName: string,
+    currentContainerId: UniqueIdentifier | undefined,
+    addItem: (containerId: UniqueIdentifier, title: string) => void,
     setItemName: (name: string) => void,
     setShowAddItemModal: (show: boolean) => void,
-    containers: ContainerType[],
-    setContainers: (containers: ContainerType[]) => void,
-    currentContainerId: UniqueIdentifier | undefined
   ) {
     if (!itemName) return;
-    const id = `item-${Math.random() * 1000}`;
-    const container = containers.find((item) => item.id === currentContainerId);
-    if (!container) return;
-    container.items.push({
-      id,
-      title: itemName,
-    });
-    setContainers([...containers]);
+    if(currentContainerId) addItem(currentContainerId, itemName);
     setItemName("");
     setShowAddItemModal(false);
   }
 
   export function onDeleteItem(
     editingItem: UniqueIdentifier | null,
-    containers: ContainerType[],
-    setContainers: (containers: ContainerType[]) => void,
+    currentContainerId: UniqueIdentifier | undefined,
+    deleteItem: (containerId: UniqueIdentifier, itemId: UniqueIdentifier) => void,
     setEditingItem: (id: UniqueIdentifier | null) => void,
-    setShowEditItemModal: (show: boolean) => void
+    setShowEditItemModal: (show: boolean) => void,
   ) {
-    if (!editingItem) return;
-    const container = containers.find((container) =>
-      container.items.find((item) => item.id === editingItem)
-    );
-    if (!container) return;
-    container.items = container.items.filter((item) => item.id !== editingItem);
-    setContainers([...containers]);
+    if(currentContainerId && editingItem) deleteItem(currentContainerId, editingItem);
     setEditingItem(null);
     setShowEditItemModal(false);
   }
@@ -55,20 +42,13 @@ export function onAddItem(
   export function onEditItem(
     editingItemName: string,
     editingItem: UniqueIdentifier | null,
-    containers: ContainerType[],
-    setContainers: (containers: ContainerType[]) => void,
+    currentContainerId: UniqueIdentifier | undefined,
+    editItem: (containerId: UniqueIdentifier, itemId: UniqueIdentifier, title: string) => void,
     setEditingItem: (id: UniqueIdentifier | null) => void,
     setShowEditItemModal: (show: boolean) => void
   ) {
-    if (!editingItemName || !editingItem) return;
-    const container = containers.find((container) =>
-      container.items.find((item) => item.id === editingItem)
-    );
-    if (!container) return;
-    const item = container.items.find((item) => item.id === editingItem);
-    if (!item) return;
-    item.title = editingItemName;
-    setContainers([...containers]);
+    if (!editingItemName) return;
+    if(currentContainerId && editingItem) editItem(currentContainerId, editingItem, editingItemName);
     setEditingItem(null);
     setShowEditItemModal(false);
   }
