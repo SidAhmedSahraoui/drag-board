@@ -1,11 +1,12 @@
 import { FC } from "react";
-import Short from "../images/short.png"
-import AnimText from "../animation/animText";
-import TextLoop from "../animation/textLoop";
+import Short from "../../images/short.png"
+import AnimText from "../../animation/animText";
+import TextLoop from "../../animation/textLoop";
+import StatsCards from "./statsCards";
 import { Link } from "react-router-dom";
 import { BoltIcon } from "@heroicons/react/24/solid";
 
-const Home: FC = () => {
+const Index: FC = () => {
   return (
     <div  
       style={{
@@ -41,8 +42,9 @@ const Home: FC = () => {
             className="h-4 w-4 inline-block ml-2 text-red-500 group-hover:text-gray-50" 
           />
       </Link>
+      <StatsCards />
     </div>
   );
 };
 
-export default Home;
+export default Index;

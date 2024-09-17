@@ -83,10 +83,11 @@ export function Container({
       <div className="pb-2 px-3 mb-auto">{children}</div>
       <div className="px-4 pb-2 mt-auto">
         <Button
+          bgLight={true}
+          fullWidth={true}
           variant="ghost"
           onClick={onAddItem}
           label="Add Card"
-          fullWidth={true}
         />
       </div>
     </div>

@@ -186,6 +186,7 @@ const Portfolio: FC = () => {
           </div>
           <Button
             bgLight={true}
+            variant="ghost"
             label=""
             icon={<TrashIcon className="h-6 w-6 text-red-400" />}
             onClick={() =>
@@ -247,7 +248,7 @@ const Portfolio: FC = () => {
         </div>
       </Modal>
       <div className="flex items-center justify-between gap-y-2">
-        <h1 className="text-gray-800 text-xl md:text-3xl font-bold">
+        <h1 className="text-gray-50 text-xl md:text-3xl font-bold">
           DragBoard
         </h1>
         <Button
