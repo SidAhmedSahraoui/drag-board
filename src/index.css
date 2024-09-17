@@ -2,14 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.montserrat-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-  padding: 30px;
+  padding: 0;
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+    font-family: Inter;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: 0% 0% / 300% 300% no-repeat fixed rgb(11, 6, 25);
+    animation: 6s ease 0s infinite alternate none running gradient;
+
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(186, 47, 42);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(30, 33, 40);
 }
