@@ -1,9 +1,9 @@
 import { FC } from "react";
-import TypeScript from "../../images/typescript.svg"
-import React from "../../images/react.svg"
-import Framer from "../../images/framer.svg"
-import Tailwind from "../../images/tailwind.svg"
-import Zustand from "../../images/zustand.svg"
+import TypeScript from "../../../images/typescript.svg"
+import React from "../../../images/react.svg"
+import Framer from "../../../images/framer.svg"
+import Tailwind from "../../../images/tailwind.svg"
+import Zustand from "../../../images/zustand.svg"
 
 interface CardProps {
     title: string;

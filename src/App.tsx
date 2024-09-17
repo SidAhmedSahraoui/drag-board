@@ -1,7 +1,14 @@
 import { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+// pages
 import Home from './pages/home';
+import NotFound from './pages/404';
+
+// routes
 import RoutesWithNavBar from './routes';
+
+// components
 import Spinner from './animation/spinner';
 
 function App() {
@@ -12,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/*" element={<RoutesWithNavBar />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </Router>

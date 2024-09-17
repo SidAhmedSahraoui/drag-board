@@ -1,8 +1,14 @@
 import { FC } from "react";
 import { Routes, Route } from "react-router-dom";
-import Portfolio from "../pages/portfolio";
-import { MobileNavbar } from "../layouts";
+
+// images
 import Gradient from "../images/gradient.png";
+
+// layouts
+import { MobileNavbar } from "../layouts";
+
+// pages
+import Portfolio from "../pages/portfolio";
 import NotFound from "../pages/404";
 
 const RoutesWithNavBar: FC = () => {

@@ -2,8 +2,8 @@ import { FC } from "react";
 import Short from "../../images/short.png"
 import AnimText from "../../animation/animText";
 import TextLoop from "../../animation/textLoop";
-import StatsCards from "./statsCards";
-import PoworedBy from "./poweredBy";
+import StatsCards from "./components/statsCards";
+import PoworedBy from "./components/poweredBy";
 import { Link } from "react-router-dom";
 import { BoltIcon } from "@heroicons/react/24/solid";
 

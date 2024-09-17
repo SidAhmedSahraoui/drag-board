@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
-import { Button, Input } from "../components";
-import { Container, Modal, Items } from "../layouts";
+import { Button, Input } from "../../components";
+import { Container, Modal, Items } from "../../layouts";
 
 import {
   useStore,
@@ -23,7 +23,7 @@ import {
   isItemNameEmpty,
   isEditingContainerNameChanged,
   isEditingItemNameChanged,
-} from "../lib";
+} from "../../lib";
 
 import {
   DndContext,

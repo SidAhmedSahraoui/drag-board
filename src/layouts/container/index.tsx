@@ -1,11 +1,11 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { UniqueIdentifier } from "@dnd-kit/core";
 import { EllipsisVerticalIcon } from "@heroicons/react/20/solid";
-import { Button } from "../components/button";
+import { Button } from "../../components/button";
 import { useState } from "react";
 import { CSS } from "@dnd-kit/utilities";
 import { AnimatePresence } from "framer-motion";
-import { Menu } from "./menu";
+import { Menu } from "../menu";
 import clsx from "clsx";
 
 type ContainerProps = {

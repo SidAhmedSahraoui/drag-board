@@ -5,18 +5,16 @@ DragBoardis a simple Kanban board that allows you to drag and drop tasks between
 - React
 - DnD-Kit
 - TypeScript
+- Zustand
 - Tailwind CSS
 - Framer-Motion
-- Hero Icons (for the icons)
 
 ## 👾 Features
 
-- Drag and drop containers.
-- Delete containers and items.
-- Edit container and item names.
-- Drag and drop items between containers.
+- Drag/drop containers, and drag/drop cards between containers.
+- Delete containers and cards.
+- Edit container and card names.
 - Add containers and items (both are draggable).
-- Indication of which container you are editing items in.
 
 ## 📒 Process
 
@@ -28,7 +26,7 @@ Subsequently, I added functionalities for deleting items and containers. I then 
 
 Some features were added in between the main features development. Everything is saved in local storage. The user can come back, and everything will still be there.
 
-**NOTE:** The project's purpose is to demonstrate the use of DnD-Kit and TypeScript. It is not meant to be a full-fledged Kanban board.
+**NOTE:** The project's purpose is to demonstrate the use of DnD-Kit, TypeScript, Zustand and Framer Motion. It is not meant to be a full-fledged Kanban board.
 
 ## 🚦 Running the Project
 
@@ -41,4 +39,4 @@ To run the project in your local environment, follow these steps:
 
 ## 📹 Video
 
-https://github.com/SidAhmedSahraoui/drag-board/assets
+Coming Soon
