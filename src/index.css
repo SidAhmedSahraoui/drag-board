@@ -48,3 +48,32 @@ body {
 ::-webkit-scrollbar-track {
   background-color: rgb(30, 33, 40);
 }
+
+#stars {
+  margin-left: auto;
+    margin-right: auto;
+    border-radius: 9999px;
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    --tw-gradient-from: #EF1B13 var(--tw-gradient-from-position);
+    --tw-gradient-to: #5200FF var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), #FFA800 var(--tw-gradient-via-position), var(--tw-gradient-to);
+    padding: 0.125rem;
+}
+
+#stars-text { 
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 9 32 / var(--tw-bg-opacity));
+  padding: 0.75rem 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
