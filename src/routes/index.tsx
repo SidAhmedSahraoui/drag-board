@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Portfolio from "../pages/portfolio";
 import { MobileNavbar } from "../layouts";
 import Gradient from "../images/gradient.png";
+import NotFound from "../pages/404";
 
 const RoutesWithNavBar: FC = () => {
   return (
@@ -17,6 +18,7 @@ const RoutesWithNavBar: FC = () => {
                 }}>
                 <Routes>
                     <Route path="/portfolio" element={<Portfolio />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
         <MobileNavbar />

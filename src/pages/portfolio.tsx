@@ -40,6 +40,7 @@ import {
   sortableKeyboardCoordinates,
 } from "@dnd-kit/sortable";
 import { Squares2X2Icon, TrashIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const Portfolio: FC = () => {
   const [containerName, setContainerName] = useState("");
@@ -248,9 +249,11 @@ const Portfolio: FC = () => {
         </div>
       </Modal>
       <div className="flex items-center justify-between gap-y-2">
-        <h1 className="text-gray-50 text-xl md:text-3xl font-bold">
-          DragBoard
-        </h1>
+        <Link
+          to="/"
+          className="text-gray-50 text-xl md:text-3xl font-bold">
+            DragBoard
+        </Link>
         <Button
           onClick={() => setShowAddContainerModal(true)}
           label="Add Container"

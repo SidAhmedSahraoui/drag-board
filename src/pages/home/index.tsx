@@ -19,7 +19,7 @@ const Index: FC = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '32px',
+        padding: '64px 8px 8px 8px',
         paddingTop: '64px',
     }}>
       <div className="flex flex-col">
@@ -28,7 +28,7 @@ const Index: FC = () => {
                   <AnimText />
               </p>
           </div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-2 mx-2 my-8 text-center text-gray-50">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-2 mx-2 mt-8 mb-4 text-center text-gray-50">
           The World's Last 
           <br />
           Task Tracking App

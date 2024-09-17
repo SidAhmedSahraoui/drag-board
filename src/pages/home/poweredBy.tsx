@@ -12,9 +12,16 @@ interface CardProps {
 
 const Card: FC<CardProps> = ({ title, logo }) => {
     return (
-        <div className="h-40 w-80 flex items-center gap-5">
-            <h3 className="font-semibold text-2xl text-gray-200">{title}</h3>
-            <img src={logo} alt="logo" className="h-16 w-16" />
+        <div className="w-40 h-10 sm:w-80 sm:h-20 flex justify-center items-center gap-3">
+            <h3 className="font-semibold text-lg sm:text-2xl text-gray-200">{title}</h3>
+            <img src={logo} alt="logo" className="w-8 h-8 sm:h-16 sm:w-16"
+                style={{ 
+                    filter: "grayscale(100%)",
+                    WebkitFilter: "grayscale(100%)",
+                    maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
+                }}
+            
+            />
         </div>
     )
 }
