@@ -19,9 +19,9 @@ const Card: FC<CardProps> = ({ title, value }) => {
 const Index: FC = () => {
 
     const metrics: CardProps[] = [
-        { title: "Total Volume", value: "$195,972,748" },
-        { title: "Task Created", value: "4,969,693" },
-        { title: "Unique Users", value: "269,920" },
+        { title: "Total Volume", value: "$ 195M" },
+        { title: "Unique Users", value: "465,322" },
+        { title: "One Platform", value: "1" },
     ]
 
 

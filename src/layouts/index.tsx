@@ -1,7 +1,8 @@
-import { lazy } from "react";
+import MobileNavbar from "./navbar";
+import Modal from "./modal";
 
 export { Items } from "./item";
 export { Container } from "./container";
 export { Menu } from "./menu";
-export const Modal = lazy(() => import("./modal"));
-export const MobileNavbar = lazy(() => import("./navbar"));
+export { MobileNavbar, Modal };
+

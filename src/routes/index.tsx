@@ -9,7 +9,7 @@ import { MobileNavbar } from "../layouts";
 
 // pages
 import Portfolio from "../pages/portfolio";
-import NotFound from "../pages/404";
+import NotFound from "../pages/error";
 
 const RoutesWithNavBar: FC = () => {
   return (
