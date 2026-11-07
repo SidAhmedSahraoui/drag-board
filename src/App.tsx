@@ -1,29 +1,20 @@
-import { Suspense } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Suspense } from "react";
+import { BrowserRouter } from "react-router-dom";
 
-// pages
-import Home from './pages/home';
-import NotFound from './pages/error';
-
-// routes
-import RoutesWithNavBar from './routes';
-
-// components
-import Spinner from './animation/spinner';
+import AppRoutes from "./routes";
+import Spinner from "./animation/spinner";
+import { ErrorBoundary, ToastHost } from "./components";
 
 function App() {
   return (
-    <div className="overflow-x-hidden overflow-y-scroll w-full h-full">
-      <Router>
+    <ErrorBoundary>
+      <BrowserRouter>
         <Suspense fallback={<Spinner />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/*" element={<RoutesWithNavBar />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <AppRoutes />
         </Suspense>
-      </Router>
-    </div>
+      </BrowserRouter>
+      <ToastHost />
+    </ErrorBoundary>
   );
 }
 

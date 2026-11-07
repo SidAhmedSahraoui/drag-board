@@ -2,79 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+}
 
-.montserrat-font {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background-color: #0b0619;
+  color: #e2e8f0;
+  font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgb(239 68 68 / 0.4);
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.18) transparent;
 }
-
-
-body {
-  padding: 0;
-  margin: 0px;
-  -webkit-font-smoothing: antialiased;
-    font-family: Inter;
-    animation-timeline: auto;
-    animation-range-start: normal;
-    animation-range-end: normal;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    background: 0% 0% / 300% 300% no-repeat fixed rgb(11, 6, 25);
-    animation: 6s ease 0s infinite alternate none running gradient;
-
-}
-
 ::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
+  width: 8px;
+  height: 8px;
 }
-
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(186, 47, 42);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: rgb(30, 33, 40);
-}
-
-#stars {
-  margin-left: auto;
-    margin-right: auto;
-    border-radius: 9999px;
-    background-image: linear-gradient(to right, var(--tw-gradient-stops));
-    --tw-gradient-from: #EF1B13 var(--tw-gradient-from-position);
-    --tw-gradient-to: #5200FF var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), #FFA800 var(--tw-gradient-via-position), var(--tw-gradient-to);
-    padding: 0.125rem;
-}
-
-#stars-text { 
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  gap: 0.25rem;
+  background-color: rgb(255 255 255 / 0.18);
   border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 9 32 / var(--tw-bg-opacity));
-  padding: 0.75rem 1.25rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(255 255 255 / 0.3);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer components {
+  .pill-gradient {
+    @apply mx-auto rounded-full bg-gradient-to-r from-[#EF1B13] via-[#FFA800] to-[#5200FF] p-0.5;
+  }
+  .pill-gradient > span {
+    @apply flex items-center gap-1 rounded-full bg-[#0f0920] px-5 py-3 text-xs font-medium uppercase tracking-widest text-white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

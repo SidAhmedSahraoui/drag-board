@@ -1,55 +1,53 @@
-type ButtonProps = {
-  onClick?: (() => void) | undefined;
-  label: string;
+import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
+import clsx from "clsx";
+
+export type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
+export type ButtonSize = "sm" | "md";
+
+type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children"> & {
+  children?: ReactNode;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   fullWidth?: boolean;
-  bgLight?: boolean;
-  variant?:
-    | "default"
-    | "destructive"
-    | "outline"
-    | "secondary"
-    | "ghost"
-    | "link";
-  disabled?: boolean;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
 };
 
-export function Button({
-  onClick,
-  label,
-  fullWidth = false,
-  variant = "default",
-  bgLight = false,
-  disabled = false,
-  icon: Icon,
-}: ButtonProps) {
-  const baseClasses =
-    "flex items-center justify-center gap-3 rounded md:rounded-md text-base font-bold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 py-2 px-3 md:px-4 md:py-2";
+const variants: Record<ButtonVariant, string> = {
+  primary:
+    "bg-red-500 text-white shadow-lg shadow-red-500/20 hover:bg-red-400 active:bg-red-600",
+  secondary:
+    "bg-white/10 text-slate-100 border border-white/10 hover:bg-white/15 active:bg-white/20",
+  ghost: "bg-transparent text-slate-300 hover:bg-white/10 hover:text-white",
+  danger:
+    "bg-red-500/10 text-red-300 border border-red-500/30 hover:bg-red-500/20 hover:text-red-200",
+};
 
-  const fullWidthClass = fullWidth ? "w-full text-center" : "";
-  const bgLightClass = bgLight
-    ? "bg-indigo-100 hover:bg-indigo-200 text-indigo-600 hover:text-indigo-800"
-    : "";
+const sizes: Record<ButtonSize, string> = {
+  sm: "h-8 px-3 text-xs gap-1.5",
+  md: "h-10 px-4 text-sm gap-2",
+};
 
-  const variantClasses = {
-    default: "bg-red-500  text-white hover:bg-red-600",
-    destructive: "bg-red-600 text-white hover:bg-red-700",
-    outline: "border border-slate-300 bg-white hover:bg-slate-100",
-    secondary: "bg-slate-700 text-white hover:bg-slate-800",
-    ghost: "bg-transparent text-slate-600 hover:bg-slate-200 hover:text-slate-800 font-semibold",
-    link: "text-blue-600 underline hover:text-blue-800",
-  };
-
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  { children, variant = "primary", size = "md", fullWidth, icon, className, type = "button", ...rest },
+  ref
+) {
   return (
     <button
-      onClick={onClick}
-      disabled={disabled}
-      className={`${baseClasses} ${fullWidthClass} ${bgLightClass}
-        ${disabled && "cursor-not-allowed"}
-         ${!bgLight && variantClasses[variant]}`}
+      ref={ref}
+      type={type}
+      className={clsx(
+        "inline-flex select-none items-center justify-center rounded-lg font-semibold transition-colors",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0619]",
+        "disabled:cursor-not-allowed disabled:opacity-40",
+        variants[variant],
+        sizes[size],
+        fullWidth && "w-full",
+        className
+      )}
+      {...rest}
     >
-      {Icon}
-      {label}
+      {icon}
+      {children}
     </button>
   );
-}
+});

@@ -1,80 +1,25 @@
 import { motion } from "framer-motion";
 
-const LoadingDot = {
-  display: "block",
-  width: "2rem",
-  height: "2rem",
-  backgroundColor: "#EF4444",
-  borderRadius: "50%"
+const container = {
+  animate: { transition: { staggerChildren: 0.15 } },
 };
 
-const LoadingContainer = {
-  width: "10rem",
-  height: "5rem",
-  display: "flex",
-  justifyContent: "space-around"
-};
-
-const ContainerVariants = {
-  initial: {
-    transition: {
-      staggerChildren: 0.2
-    }
-  },
+const dot = {
+  initial: { y: 0, opacity: 0.5 },
   animate: {
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const DotVariants = {
-  initial: {
-    y: "0%"
+    y: -14,
+    opacity: 1,
+    transition: { duration: 0.45, repeat: Infinity, repeatType: "reverse" as const, ease: "easeInOut" as const },
   },
-  animate: {
-    y: "100%"
-  }
 };
 
-const DotTransition = {
-  duration: 0.5,
-  yoyo: Infinity,
-  ease: "easeInOut"
-};
-
-export default function Index() {
+export default function Spinner() {
   return (
-    <div
-      style={{
-        paddingTop: "5rem",
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-      }}
-    >
-      <motion.div
-        style={LoadingContainer}
-        variants={ContainerVariants}
-        initial="initial"
-        animate="animate"
-      >
-        <motion.span
-          style={LoadingDot}
-          variants={DotVariants}
-          transition={DotTransition}
-        />
-        <motion.span
-          style={LoadingDot}
-          variants={DotVariants}
-          transition={DotTransition}
-        />
-        <motion.span
-          style={LoadingDot}
-          variants={DotVariants}
-          transition={DotTransition}
-        />
+    <div role="status" aria-label="Loading" className="flex min-h-dvh items-center justify-center">
+      <motion.div className="flex gap-3" variants={container} initial="initial" animate="animate">
+        {[0, 1, 2].map((i) => (
+          <motion.span key={i} variants={dot} className="block h-4 w-4 rounded-full bg-red-500" />
+        ))}
       </motion.div>
     </div>
   );

@@ -1,42 +1,32 @@
-## DragBoard - A Kanban Board for Drag and Drop
+## DragBoard — a drag & drop task board
 
-DragBoardis a simple Kanban board that allows you to drag and drop tasks between columns. It is built using:
+A fast, keyboard-friendly Kanban board that saves to your browser. Built with React, TypeScript, dnd-kit, Zustand, Tailwind CSS and Framer Motion.
 
-- React
-- DnD-Kit
-- TypeScript
-- Zustand
-- Tailwind CSS
-- Framer-Motion
+## Features
 
-## 👾 Features
+- Drag cards between lists, reorder cards, and reorder lists (mouse, touch, or keyboard).
+- Inline "add card" / "add list" composers; rename lists from their menu; edit cards in a dialog.
+- Undo for deleted cards and lists; Esc cancels a drag and restores the board.
+- Accessible: focus-trapped dialogs, labelled controls, screen-reader announcements by title.
+- Autosaves to `localStorage` (validated on load, so corrupted data can't crash the app).
+- Marketing landing page at `/`, the board at `/board` (`/portfolio` redirects).
 
-- Drag/drop containers, and drag/drop cards between containers.
-- Delete containers and cards.
-- Edit container and card names.
-- Add containers and items (both are draggable).
+## Keyboard
 
-## 📒 Process
+Focus a card or a list's grip handle, then: `Space` pick up / drop, `←` `→` move between lists, `↑` `↓` move within a list, `Esc` cancel.
 
-I started by implementing the functionality for creating containers. Next, I added the ability to drag and drop containers. Afterwards, I focused on the capability to create items inside containers and further, to drag and drop them.
+## Scripts
 
-Then I styled the board, drawing inspiration from modern Kanban boards like Jira, Trello, and Notion based on my experience.
+```bash
+yarn dev      # start the dev server
+yarn build    # type-check and build
+yarn lint     # eslint, zero warnings allowed
+```
 
-Subsequently, I added functionalities for deleting items and containers. I then implemented the ability to edit the names of containers and items. Lastly, I added an indication of which container you are editing items in. Afterward, I performed some small refactoring and styling touch-ups.
+## Structure
 
-Some features were added in between the main features development. Everything is saved in local storage. The user can come back, and everything will still be there.
-
-**NOTE:** The project's purpose is to demonstrate the use of DnD-Kit, TypeScript, Zustand and Framer Motion. It is not meant to be a full-fledged Kanban board.
-
-## 🚦 Running the Project
-
-To run the project in your local environment, follow these steps:
-
-1. Clone the repository to your local machine.
-2. Run `npm install` or `yarn` in the project directory to install the required dependencies.
-3. Run `npm run start` or `yarn start` to get the project started.
-4. Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console) in your web browser to view the app.
-
-## 📹 Video
-
-Coming Soon
+- `src/lib/store` – Zustand store (persisted)
+- `src/lib/dnd` – drag & drop behaviour (`useBoardDnd`, keyboard coordinates)
+- `src/layouts` – board building blocks (container/list, item/card, menu, modal)
+- `src/components` – primitives (button, input, composer, toast, error boundary)
+- `src/pages` – `home` (landing), `board`, `error` (404)
